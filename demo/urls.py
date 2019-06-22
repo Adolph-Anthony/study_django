@@ -21,8 +21,11 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     #users充当前缀, users/index
     # url(r'^users/', include("users.urls")) + 命名空间
-    url(r'^users/', include("users.urls",namespace="users"))
+    url(r'^users/', include("users.urls",namespace="users")),
     #直接视图调用
     # url(r'^index/$', users.views.index)
+    #不想加前缀
+
+    url(r'^', include("reqresp.urls")),
 
 ]
