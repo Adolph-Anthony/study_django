@@ -1,0 +1,13 @@
+http://127.0.0.1:8000     /users/index/  从含义上讲以斜线结尾表示目录
+http://127.0.0.1:8000     /users/index   从含义上讲不以斜线结尾表示文件
+
+GET /<index.html>     查询字符串（query string)，形如?key1=value1&key2=value2；
+
+Content_Type:xxxx
+
+body
+
+- 提取URL的特定部分，如/weather/beijing/2018，可以在服务器端的路由中用正则表达式截取；
+- 查询字符串（query string)，形如key1=value1&key2=value2；
+- 请求体（body）中发送的数据，比如表单数据、json、xml；
+- 在http报文的头（header）中。
