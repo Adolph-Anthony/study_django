@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.core.urlresolvers import reverse
 from django.shortcuts import render
 
 # Create your views here.
@@ -10,3 +11,13 @@ def index(request):
     :return: 响应对象
     '''
     return HttpResponse("hello world")
+
+
+def say(request):
+    url = reverse("users:index")
+    print(url)
+    return HttpResponse("say")
+
+
+def sayhello(request):
+    return HttpResponse("say hello")

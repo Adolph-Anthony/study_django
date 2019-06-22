@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
+import users.views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     #users充当前缀, users/index
-    url(r'^users/', include("users.urls"))
+    # url(r'^users/', include("users.urls")) + 命名空间
+    url(r'^users/', include("users.urls",namespace="users"))
+    #直接视图调用
+    # url(r'^index/$', users.views.index)
 
 ]
