@@ -46,8 +46,19 @@ def weather(request,year,city):
     return HttpResponse("OK")
 
 def demo_response(request):
-    s = '{"name":"python"}'
-    response = HttpResponse(s,content_type="application/json",status=200)
-    response["Itcast"] ="python"
-    # return response
+    # s = '{"name":"python"}'
+    # response = HttpResponse(s,content_type="application/json",status=200)
+    # response["Itcast"] ="python"
+    # return response构造
+
+    #Session操作
+    request.session["user_id"] = 100
+    request.session["userNname"] = "python"
+    request.session["user_test"] = "test"
+    # 以键获取session的值
+    print(request.session.get('user_id', None))
+    # 设置session有效值 以秒计算
+    request.session.set_expiry(10)
+
+    #快速构建json格式数据
     return JsonResponse({'city': 'beijing', 'subject': 'python'})
