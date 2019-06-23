@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.http import JsonResponse
 from django.shortcuts import render
 import json
 # Create your views here.
@@ -43,3 +44,10 @@ def weather(request,year,city):
 
     # HttpRequest对象的属性GET、POST都是QueryDict类型的对象
     return HttpResponse("OK")
+
+def demo_response(request):
+    s = '{"name":"python"}'
+    response = HttpResponse(s,content_type="application/json",status=200)
+    response["Itcast"] ="python"
+    # return response
+    return JsonResponse({'city': 'beijing', 'subject': 'python'})
