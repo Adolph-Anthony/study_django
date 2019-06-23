@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.utils.decorators import method_decorator
 from django.views.generic import View
 # Create your views here.
 
@@ -15,8 +16,19 @@ def my_decorator(view_func):
 # def func_demo(request):
 #     return HttpResponse()
 
+
+
+# 为全部请求方法添加装饰器
+@method_decorator(my_decorator, name='dispatch')
 class DemoView(View):
     """类视图：处理注册"""
+
+
+    # @method_decorator(my_decorator)
+    # def dispatch(self, *args, **kwargs):
+    #     return super().dispatch(*args, **kwargs)
+
+
 
     def get(self, request):
         """处理GET请求，返回注册页面"""
