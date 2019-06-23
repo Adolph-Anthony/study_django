@@ -49,7 +49,7 @@ def demo_response(request):
     # s = '{"name":"python"}'
     # response = HttpResponse(s,content_type="application/json",status=200)
     # response["Itcast"] ="python"
-    # return response构造
+    # return response   构造
 
     #Session操作
     request.session["user_id"] = 100
