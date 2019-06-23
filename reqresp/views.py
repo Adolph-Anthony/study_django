@@ -58,7 +58,7 @@ def demo_response(request):
     # 以键获取session的值
     print(request.session.get('user_id', None))
     # 设置session有效值 以秒计算
-    request.session.set_expiry(10)
+    # request.session.set_expiry(10)
 
     #快速构建json格式数据
     return JsonResponse({'city': 'beijing', 'subject': 'python'})
