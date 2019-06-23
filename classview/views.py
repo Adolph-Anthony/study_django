@@ -58,19 +58,48 @@ def my_decorator(view_func):
     #     return HttpResponse('POST')
 
 
-#给类视图使用的 调整后
-def my_decorator_for_class(view_func):
-    def wrapper(self,request,*args,**kwargs):
-        print("装饰器被调用")
-        print(request.path)
-        return view_func(self,request,*args,**kwargs)
-    return wrapper
+#给类视图使用的 调整后不需要method_decorator()
+# def my_decorator_for_class(view_func):
+#     def wrapper(self,request,*args,**kwargs):
+#         print("装饰器被调用")
+#         print(request.path)
+#         return view_func(self,request,*args,**kwargs)
+#     return wrapper
+#
+#
+# class DemoView(View):
+#     """类视图：处理注册"""
+#     #调整后的装饰器不需要method_decorator()
+#     @my_decorator_for_class
+#     def get(self, request):
+#         """处理GET请求，返回注册页面"""
+#         return HttpResponse("get")
+#
+#     def post(self, request):
+#         """处理POST请求，实现注册逻辑"""
+#         return HttpResponse('POST')
+
+class BaseView(object):
+    #装饰器
+    @classmethod
+    def as_view(cls, **initkwargs):
+        view = super().as_view()
+        view = my_decorator(view)
+        return view
+
+class Base2View(object):
+    #装饰器
+    @classmethod
+    def as_view(cls, **initkwargs):
+        view = super().as_view()
+        view = my_decorator(view)
+        return view
 
 
-class DemoView(View):
+#使用扩展类
+class DemoView(BaseView,Base2View,View):
     """类视图：处理注册"""
-    #调整后的装饰器不需要method_decorator()
-    @my_decorator_for_class
+
     def get(self, request):
         """处理GET请求，返回注册页面"""
         return HttpResponse("get")
@@ -78,3 +107,4 @@ class DemoView(View):
     def post(self, request):
         """处理POST请求，实现注册逻辑"""
         return HttpResponse('POST')
+
