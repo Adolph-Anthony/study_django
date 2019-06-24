@@ -79,25 +79,29 @@ def my_decorator(view_func):
 #         """处理POST请求，实现注册逻辑"""
 #         return HttpResponse('POST')
 
-class BaseView(object):
+class BaseViewMixin(object):
     #装饰器
     @classmethod
     def as_view(cls, **initkwargs):
+        print("1  在最终as_view方法执行被调用")
         view = super().as_view()
+        print("2")
         view = my_decorator(view)
+        print("3")
         return view
 
-class Base2View(object):
-    #装饰器
-    @classmethod
-    def as_view(cls, **initkwargs):
-        view = super().as_view()
-        view = my_decorator(view)
-        return view
+# class Base2View(object):
+#     #装饰器
+#     @classmethod
+#     def as_view(cls, **initkwargs):
+#         view = super().as_view()
+#         view = my_decorator(view)
+#         return view
 
 
 #使用扩展类
-class DemoView(BaseView,Base2View,View):
+# class DemoView(BaseView,Base2View,View):
+class DemoView(BaseViewMixin ,View):
     """类视图：处理注册"""
 
     def get(self, request):
