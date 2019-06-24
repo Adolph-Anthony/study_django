@@ -56,7 +56,8 @@ def demo_response(request):
     request.session["userNname"] = "python"
     request.session["user_test"] = "test"
     # 以键获取session的值
-    print(request.session.get('user_id', None))
+    # print(request.session.get('user_id', None))
+    print("视图被执行")
     # 设置session有效值 以秒计算
     # request.session.set_expiry(10)
 
