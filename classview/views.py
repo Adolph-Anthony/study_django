@@ -6,8 +6,8 @@ from django.views.generic import View
 
 def my_decorator(view_func):
     def wrapper(request,*args,**kwargs):
-        print("装饰器被调用")
-        print(request.path)
+        # print("装饰器被调用")
+        # print(request.path)
         return view_func(request,*args,**kwargs)
     return wrapper
 
@@ -85,9 +85,9 @@ class BaseViewMixin(object):
     def as_view(cls, **initkwargs):
         print("1  在最终as_view方法执行被调用")
         view = super().as_view()
-        print("2")
+        # print("2")
         view = my_decorator(view)
-        print("3")
+        # print("3")
         return view
 
 # class Base2View(object):
@@ -106,6 +106,7 @@ class DemoView(BaseViewMixin ,View):
 
     def get(self, request):
         """处理GET请求，返回注册页面"""
+        print("class")
         return HttpResponse("get")
 
     def post(self, request):

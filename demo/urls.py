@@ -27,5 +27,6 @@ urlpatterns = [
     #不想加前缀
     url(r'^', include("reqresp.urls")),
     url(r'^', include("classview.urls")),
+    url(r'^', include("booktest.urls")),
 
 ]
