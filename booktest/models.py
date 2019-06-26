@@ -1,6 +1,15 @@
 from django.db import models
 
 # Create your models here.
+
+class BookInfoManager(models.Manager):
+    '''创建自定义管理器'''
+    def all(self):
+        return self.filter(is_delete = False)
+
+
+
+
 #定义图书模型类BookInfo
 class BookInfo(models.Model):
     btitle = models.CharField(max_length=20, verbose_name='名称')
@@ -20,6 +29,9 @@ class BookInfo(models.Model):
         """定义每个数据对象的显示信息"""
         return self.btitle
 
+    #补充自定义管理器对象,模型类将不会再存在objects
+    query = BookInfoManager()
+
 #定义英雄模型类HeroInfo
 class HeroInfo(models.Model):
     GENDER_CHOICES = (
@@ -27,8 +39,13 @@ class HeroInfo(models.Model):
         (1, 'female')
     )
     hname = models.CharField(max_length=20, verbose_name='名称')
+
+    # 来指明choices这个字段可选范围,传入元组数据,要么就是0要么就是1,后面跟的字符方便理解 代表 0 是代表什么意思等
     hgender = models.SmallIntegerField(choices=GENDER_CHOICES, default=0, verbose_name='性别')
     hcomment = models.CharField(max_length=200, null=True, verbose_name='描述信息')
+
+    # 外键只需要指明 hbook 跟哪个 模型类(BookInfo) 形成外键就可以了
+    # on_delete 代表被关联的数据被删除如何处理  CASCADE:级联
     hbook = models.ForeignKey(BookInfo, on_delete=models.CASCADE, verbose_name='图书')  # 外键
     is_delete = models.BooleanField(default=False, verbose_name='逻辑删除')
 
