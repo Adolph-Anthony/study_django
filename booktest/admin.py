@@ -27,7 +27,7 @@ class BookInfoAdmin(admin.ModelAdmin):
     #分组显示
     fieldsets = [
         ('基本',{'fields':['btitle','bpub_date']}),
-        ('高级',{'fields':['bread','bcomment'],
+        ('高级',{'fields':['bread','bcomment','logo'],
                'classes':('collapse',) #是否显示折叠
                }),
     ]

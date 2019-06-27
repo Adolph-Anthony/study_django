@@ -468,48 +468,52 @@ model</ColNames>
       <DataType>tinyint(1)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="118" parent="27" name="PRIMARY">
+    <column id="118" parent="27" name="logo">
+      <Position>7</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <key id="119" parent="27" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="119" parent="28" name="id">
+    <column id="120" parent="28" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="120" parent="28" name="hname">
+    <column id="121" parent="28" name="hname">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="121" parent="28" name="hgender">
+    <column id="122" parent="28" name="hgender">
       <Position>3</Position>
       <DataType>smallint(6)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="122" parent="28" name="hcomment">
+    <column id="123" parent="28" name="hcomment">
       <Position>4</Position>
       <DataType>varchar(200)|0</DataType>
     </column>
-    <column id="123" parent="28" name="is_delete">
+    <column id="124" parent="28" name="is_delete">
       <Position>5</Position>
       <DataType>tinyint(1)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="124" parent="28" name="hbook_id">
+    <column id="125" parent="28" name="hbook_id">
       <Position>6</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="125" parent="28" name="tb_heros_hbook_id_9e4a63db_fk_tb_books_id">
+    <index id="126" parent="28" name="tb_heros_hbook_id_9e4a63db_fk_tb_books_id">
       <ColNames>hbook_id</ColNames>
     </index>
-    <key id="126" parent="28" name="PRIMARY">
+    <key id="127" parent="28" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="127" parent="28" name="tb_heros_hbook_id_9e4a63db_fk_tb_books_id">
+    <foreign-key id="128" parent="28" name="tb_heros_hbook_id_9e4a63db_fk_tb_books_id">
       <ColNames>hbook_id</ColNames>
       <RefSchemaName>django_demo</RefSchemaName>
       <RefTableName>tb_books</RefTableName>

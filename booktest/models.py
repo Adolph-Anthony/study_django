@@ -17,7 +17,8 @@ class BookInfo(models.Model):
     bread = models.IntegerField(default=0, verbose_name='阅读量')
     bcomment = models.IntegerField(default=0, verbose_name='评论量')
     is_delete = models.BooleanField(default=False, verbose_name='逻辑删除')
-
+    #创建新字段存储图片保存路径
+    logo = models.ImageField(upload_to='booktest', verbose_name='主图片', null=True)
     # 默认表名
     # booktest_bookinfo
     class Meta:
