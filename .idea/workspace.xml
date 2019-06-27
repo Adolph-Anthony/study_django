@@ -62,8 +62,8 @@
       <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/booktest/admin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="26" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="26" />
+            <state relative-caret-position="90">
+              <caret line="5" column="14" lean-forward="false" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -713,7 +713,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561606368175</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Admin站点编辑页面控制">
+      <created>1561621619445</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1561621619445</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -821,7 +828,8 @@
     <MESSAGE value="使用Admin站点的预设值" />
     <MESSAGE value="自定义Admin管理类" />
     <MESSAGE value="Admin站点列表页控制" />
-    <option name="LAST_COMMIT_MESSAGE" value="Admin站点列表页控制" />
+    <MESSAGE value="Admin站点编辑页面控制" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin站点编辑页面控制" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1279,8 +1287,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/booktest/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="26" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="26" />
+        <state relative-caret-position="90">
+          <caret line="5" column="14" lean-forward="false" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>

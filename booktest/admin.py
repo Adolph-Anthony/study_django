@@ -3,6 +3,11 @@ from django.contrib import admin
 # Register your models here.
 from booktest.models import BookInfo, HeroInfo
 
+# 设置网站页头  页面标题  首页标语
+admin.site.site_header = '图书管理网站后台'
+admin.site.site_title = '图书管理网站'
+admin.site.index_title = '欢迎使用'
+
 class HeroInfoStackInline(admin.StackedInline):
     '''块内联'''
     model = HeroInfo  # 要编辑的对象
@@ -26,8 +31,9 @@ class BookInfoAdmin(admin.ModelAdmin):
                'classes':('collapse',) #是否显示折叠
                }),
     ]
+    #以列展示
     inlines = [HeroInfoTabularInline]
-
+    #以块展示
     # inlines = [HeroInfoStackInline]
 
 @admin.register(HeroInfo)
