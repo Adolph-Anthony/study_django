@@ -3,9 +3,32 @@ from django.contrib import admin
 # Register your models here.
 from booktest.models import BookInfo, HeroInfo
 
+class HeroInfoStackInline(admin.StackedInline):
+    '''块内联'''
+    model = HeroInfo  # 要编辑的对象
+    extra = 1  # 附加编辑的数量
+
+class HeroInfoTabularInline(admin.TabularInline):
+    '''表格内联'''
+    model = HeroInfo
+    extra = 1
+
+
 class BookInfoAdmin(admin.ModelAdmin):
     '''样式调整,需要注册,不用添加装饰器'''
     list_display = ['id','btitle','pub_date']
+    #控制字段显示
+    # fields = ['btitle','bpub_ date']
+    #分组显示
+    fieldsets = [
+        ('基本',{'fields':['btitle','bpub_date']}),
+        ('高级',{'fields':['bread','bcomment'],
+               'classes':('collapse',) #是否显示折叠
+               }),
+    ]
+    inlines = [HeroInfoTabularInline]
+
+    # inlines = [HeroInfoStackInline]
 
 @admin.register(HeroInfo)
 class HeroInfoAdmin(admin.ModelAdmin):
