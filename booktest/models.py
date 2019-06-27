@@ -28,9 +28,16 @@ class BookInfo(models.Model):
     def __str__(self):
         """定义每个数据对象的显示信息"""
         return self.btitle
-
     #补充自定义管理器对象,模型类将不会再存在objects
-    query = BookInfoManager()
+    # query = BookInfoManager()
+    def pub_date(self):
+        #调整返回样式,从日期转化成字符串
+        return self.bpub_date.strftime('%Y年%m月%d日')
+    #给pub_date函数补充属性,将页面展示的字段名字改成 发行日期
+    pub_date.short_description = '发行日期'
+    #自定义的字段没有排序功能,增加字段排序功能
+    pub_date.admin_order_field = 'bpub_date'
+
 
 #定义英雄模型类HeroInfo
 class HeroInfo(models.Model):
