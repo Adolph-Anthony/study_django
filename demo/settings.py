@@ -37,9 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'users.apps.UsersConfig', #注册安装应用
     'reqresp.apps.ReqrespConfig',
-    'booktest.apps.BooktestConfig'
+    'booktest.apps.BooktestConfig',
+
 ]
 
 MIDDLEWARE = [
