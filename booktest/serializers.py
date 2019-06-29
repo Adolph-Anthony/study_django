@@ -6,6 +6,13 @@ from .models import BookInfo
 #         model = BookInfo
 #         fields = '__all__'
 
+class BookInfoSerializer(serializers.ModelSerializer):
+    """模型图书数据序列化器"""
+    class Meta:
+        model = BookInfo
+        fields = '__all__'
+
+
 class BookInfoSerializer(serializers.Serializer):
     """图书数据序列化器"""
     id = serializers.IntegerField(label='ID', read_only=True)
