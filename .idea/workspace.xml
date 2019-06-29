@@ -58,8 +58,8 @@
       <file leaf-file-name="serializers.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/booktest/serializers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+            <state relative-caret-position="257">
+              <caret line="42" column="32" lean-forward="true" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -879,7 +879,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561789831093</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="定义序列化器的验证行为">
+      <created>1561805968421</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1561805968421</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -964,7 +971,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="配置、静态文件与路由说明" />
     <MESSAGE value="APP应用配置-设置该应用的直观可读的名字" />
     <MESSAGE value="前端传递参数的方式" />
     <MESSAGE value="URL提取参数" />
@@ -989,7 +995,8 @@
     <MESSAGE value="控制Admin站点的整体标题信息" />
     <MESSAGE value="上传图片使用" />
     <MESSAGE value="使用Django定义REST API" />
-    <option name="LAST_COMMIT_MESSAGE" value="使用Django定义REST API" />
+    <MESSAGE value="定义序列化器的验证行为" />
+    <option name="LAST_COMMIT_MESSAGE" value="定义序列化器的验证行为" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1422,8 +1429,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/booktest/serializers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+        <state relative-caret-position="257">
+          <caret line="42" column="32" lean-forward="true" selection-start-line="42" selection-start-column="32" selection-end-line="42" selection-end-column="32" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>

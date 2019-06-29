@@ -30,6 +30,21 @@ class BookInfoSerializer(serializers.Serializer):
             raise serializers.ValidationError('阅读量小于评论量')
         return attrs
 
+    def create(self, validated_data):
+        """新建"""
+        return BookInfo.objects.create(**validated_data)
+
+    def update(self, instance, validated_data):
+        """更新，instance为要更新的对象实例"""
+        instance.btitle = validated_data.get('btitle', instance.btitle)
+        #如果没传这个属性,直接使用对象原来的属性代替,instance.bpub_date
+        instance.bpub_date = validated_data.get('bpub_date', instance.bpub_date)
+        instance.bread = validated_data.get('bread', instance.bread)
+        instance.bcomment = validated_data.get('bcomment', instance.bcomment)
+        instance.save()
+        return instance
+
+
 class HeroInfoSerializer(serializers.Serializer):
     """英雄数据序列化器"""
     GENDER_CHOICES = (
