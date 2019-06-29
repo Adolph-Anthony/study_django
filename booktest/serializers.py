@@ -12,6 +12,23 @@ class BookInfoSerializer(serializers.Serializer):
     btitle = serializers.CharField(label='名称', max_length=20)
     bpub_date = serializers.DateField(label='发布日期', required=False)
     logo = serializers.ImageField(label='图片', required=False)
+    bread = serializers.IntegerField(label='阅读量', required=False)
+    bcomment = serializers.IntegerField(label='评论量', required=False)
+    image = serializers.ImageField(label='图片', required=False)
+    heroinfo_set = serializers.PrimaryKeyRelatedField(read_only=True,many=True)
+    def validate_btitle(self, value):
+        '''自定义验证'''
+        if 'django' not in value.lower():
+            #如果输入的词小写不是django则抛出错误
+            raise serializers.ValidationError("验证错误描述")
+        return value
+
+    def validate(self, attrs):
+        bcomment = attrs['bcomment']
+        bread = attrs['bread']
+        if bread < bcomment:
+            raise serializers.ValidationError('阅读量小于评论量')
+        return attrs
 
 class HeroInfoSerializer(serializers.Serializer):
     """英雄数据序列化器"""
