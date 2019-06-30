@@ -25,20 +25,31 @@ from .serializers import BookInfoSerializer
 #         return Response(seializer.data,status=200)
 #
 
-# GET /books/
-class BookListAPIView(GenericAPIView):
+# GET /books/   继承GenericAPIView
+# class BookListAPIView(GenericAPIView):
+#     # 数据库查询方法
+#     queryset = BookInfo.objects.all()
+#     #序列化
+#     serializer_class = BookInfoSerializer
+#     def get(self,request):
+#         #数据库查询方法
+#         qs = self.get_queryset()
+#         #构建序列化器对象,进行序列化操作
+#         # seializer = BookInfoSerializer(querySet,many=True)
+#         seializer = self.get_serializer(qs,many =True)
+#         # seializer.data
+#         return Response(seializer.data,status=200)
+
+#简化序列化 扩展类mixins.ListModelMixin
+from rest_framework import mixins
+class BookListAPIView(mixins.ListModelMixin,GenericAPIView):
     # 数据库查询方法
     queryset = BookInfo.objects.all()
     #序列化
     serializer_class = BookInfoSerializer
     def get(self,request):
-        #数据库查询方法
-        qs = self.get_queryset()
-        #构建序列化器对象,进行序列化操作
-        # seializer = BookInfoSerializer(querySet,many=True)
-        seializer = self.get_serializer(qs,many =True)
-        # seializer.data
-        return Response(seializer.data,status=200)
+        #序列化过程全在list里,
+        return self.list(request)
 
 # GET /books/<pk>
 class BookDetailAPIView(GenericAPIView):
