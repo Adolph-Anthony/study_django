@@ -1,16 +1,27 @@
 from rest_framework import serializers
-from .models import BookInfo
+from .models import BookInfo, HeroInfo
+
 
 # class BookInfoSerializer(serializers.ModelSerializer):
 #     class Meta:
 #         model = BookInfo
 #         fields = '__all__'
 
-class BookInfoSerializer(serializers.ModelSerializer):
+class BookInfoModelSerializer(serializers.ModelSerializer):
     """模型图书数据序列化器"""
     class Meta:
         model = BookInfo
-        fields = '__all__'
+        # fields = '__all__'
+        #指名序列化模型字段数据
+        fields = ('id', 'btitle', 'bpub_date')
+
+class HeroInfoModelSerializer(serializers.ModelSerializer):
+    """模型图书数据序列化器"""
+    class Meta:
+        model = HeroInfo
+        # fields = '__all__'
+        #指名序列化模型字段数据
+        fields = ('id', 'hname', 'hbook')
 
 
 class BookInfoSerializer(serializers.Serializer):
